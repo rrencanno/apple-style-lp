@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![Apple-Style LP Screenshot](./images/screenshot.png)
 
-## Getting Started
+## 概要 (Overview)
 
-First, run the development server:
+このプロジェクトは、Apple社の製品紹介ページにインスパイアされた、スクロール連動アニメーションを多用したランディングページ（LP）です。
+モダンなフロントエンド技術である Next.js, TypeScript, Framer Motion を用いて、リッチでインタラクティブなユーザー体験の実現を目指しました。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**デモサイトURL:** [https://apple-style-lp.vercel.app/](https://apple-style-lp.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 主な特徴・実装した機能 (Features)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-   **スクロール連動アニメーション:**
+    -   ユーザーのスクロール位置に応じて、要素が拡大・縮小したり、フェードイン・アウトします。
+    -   `Framer Motion` の `useScroll` および `useTransform` フックを利用して実装。
+-   **表示連動アニメーション:**
+    -   要素が画面内に入ったことを検知し、フワッと表示されるアニメーションを実装。
+    -   `Framer Motion` の `useInView` フックを利用して実装。
+-   **レスポンシブデザイン:**
+    -   CSS Modules とメディアクエリを使用し、PC、タブレット、スマートフォンなど、あらゆるデバイスで最適なレイアウトが表示されるように設計しました。
+-   **グラデーションテキスト:**
+    -   CSSの `background-clip: text` を利用して、テキストに美しいグラデーションを適用。
+-   **コンポーネントベース設計:**
+    -   アニメーションロジックを再利用可能な `AnimateOnScroll` コンポーネントとして切り出し、保守性の高いコードを意識しました。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 使用技術 (Tech Stack)
 
-## Learn More
+-   **フレームワーク:** Next.js (App Router)
+-   **言語:** TypeScript
+-   **スタイリング:** CSS Modules
+-   **アニメーション:** Framer Motion
+-   **ホスティング:** Vercel
 
-To learn more about Next.js, take a look at the following resources:
+## 環境構築 (Setup)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1.  リポジトリをクローンします。
+    ```bash
+    git clone https://github.com/rrencanno/apple-style-lp.git
+    ```
+2.  プロジェクトディレクトリに移動し、依存パッケージをインストールします。
+    ```bash
+    cd apple-style-lp
+    npm install
+    ```
+3.  開発サーバーを起動します。
+    ```bash
+    npm run dev
+    ```
+4.  ブラウザで [http://localhost:3000](http://localhost:3000) を開きます。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
