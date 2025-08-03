@@ -1,0 +1,173 @@
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    overflow: hidden;
+}
+
+/* 汎用的なセクションタイトルと段落のスタイル */
+.sectionTitle {
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.sectionParagraph {
+    font-size: 1.125rem;
+    line-height: 1.75;
+}
+
+/* --- セクション1: ヒーロー --- */
+.heroSection {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+}
+
+.heroOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 1;
+}
+
+.heroTitle {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: bold;
+    letter-spacing: -0.025em;
+}
+
+.heroTitleSub {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.heroTitleGradient {
+    background: linear-gradient(to right, #fde047, #f97316, #ef4444);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.heroSubtitle {
+    font-size: 1.25rem;
+    color: #e5e7eb;
+    margin-top: 1.5rem;
+}
+
+/* --- セクション2: 特徴紹介 --- */
+.featureSection {
+    background-color: #ffffff;
+    color: #111827;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.featureText {
+    flex: 1;
+    text-align: center;
+    max-width: 500px;
+}
+
+.featureImageWrapper {
+    flex: 1;
+    width: 100%;
+    max-width: 400px;
+}
+
+.featureImage {
+    border-radius: 0.5rem;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    width: 100%;
+    height: auto;
+}
+
+/* =================================== */
+/* レスポンシブ対応 (768px以上)        */
+/* =================================== */
+@media (min-width: 768px) {
+    .section {
+        padding: 4rem;
+        /* PCではパディングを広げる */
+    }
+
+    /* セクション2のPC用スタイル */
+    .featureSection {
+        flex-direction: row;
+    }
+
+    .featureText {
+        text-align: left;
+        max-width: none;
+        /* PCでは幅制限を解除 */
+    }
+
+    .featureImageWrapper {
+        max-width: none;
+        /* PCでは幅制限を解除 */
+    }
+
+    /* 汎用的なタイトルと段落のPC用スタイル */
+    .sectionTitle {
+        font-size: 3.75rem;
+        /* 60px */
+    }
+
+    .sectionParagraph {
+        font-size: 1.25rem;
+        /* 20px */
+    }
+
+    /* ヒーローセクションのサブタイトルのPC用スタイル */
+    .heroSubtitle {
+        font-size: 1.25rem;
+        margin-top: 1.5rem;
+    } }
+
+/* --- セクション3: カメラ紹介 --- */
+.cameraSection {
+    background-color: #171717;
+    color: white;
+}
+
+.cameraContent {
+    max-width: 56rem;
+    width: 100%;
+}
+
+.cameraTitle {
+    font-size: clamp(2rem, 6vw, 3.75rem);
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.cameraImage {
+    border-radius: 0.5rem;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+
+/* --- セクション4: 最後のテキスト --- */
+.endSection {
+    background-color: #ffffff;
+    color: #111827;
+}
+
+.endTitle {
+    font-size: clamp(2rem, 6vw, 3.75rem);
+    font-weight: bold; }
